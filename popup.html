@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 270px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      background: #f5f5f7;
+    }
+    h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-bottom: 18px;
+      letter-spacing: -0.2px;
+    }
+    label {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: #86868b;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    select, input {
+      width: 100%;
+      padding: 9px 11px;
+      border: 1px solid #d1d1d6;
+      border-radius: 9px;
+      font-size: 13px;
+      background: white;
+      color: #1d1d1f;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    select { 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2386868b'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+    .field { margin-bottom: 14px; }
+    .hint {
+      font-size: 11px;
+      color: #86868b;
+      margin-top: 5px;
+    }
+    #save {
+      margin-top: 6px;
+      width: 100%;
+      padding: 11px;
+      background: #007aff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #save:hover { background: #0063cc; }
+  </style>
+</head>
+<body>
+  <h2>✨ Humanizer Pro</h2>
+
+  <div class="field">
+    <label>Service Provider</label>
+    <select id="provider">
+      <option value="groq">Groq (Fast &amp; Free)</option>
+      <option value="openai">OpenAI (GPT-4o)</option>
+      <option value="gemini">Google Gemini</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>API Key</label>
+    <input type="password" id="key" placeholder="Paste your key here">
+    <p class="hint" id="key-hint">Get a free key at console.groq.com</p>
+  </div>
+
+  <button id="save">Save Preferences</button>
+
+  <script src="popup.js"></script>
+  <script>
+    // Update hint based on selected provider
+    const hints = {
+      groq: 'Get a free key at console.groq.com',
+      openai: 'Get a key at platform.openai.com/api-keys',
+      gemini: 'Get a key at aistudio.google.com/apikey'
+    };
+    document.getElementById('provider').addEventListener('change', (e) => {
+      document.getElementById('key-hint').textContent = hints[e.target.value];
+    });
+  </script>
+</body>
+</html>

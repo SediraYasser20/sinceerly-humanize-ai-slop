@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Humanizer Pro",
+  "version": "1.0",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://api.groq.com/*",
+    "https://api.openai.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "action": { "default_popup": "popup.html" },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://mail.google.com/*"],
+    "js": ["content.js"],
+    "css": ["content.css"]
+  }]
+}
