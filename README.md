@@ -3,7 +3,7 @@
 > We now use AI to write emails, and AI to hide that AI wrote them.  
 > This is the free, open-source version of that second step.
 
-A Chrome extension that humanizes AI-written emails — removes em dashes, strips robotic phrasing, and adds natural imperfections. Inspired by [Sinceerly](https://sinceerly.com/). Completely free. Bring your own Anthropic API key.
+A Chrome extension that humanizes AI-written emails — removes em dashes, strips robotic phrasing, and adds natural imperfections. Inspired by [Sinceerly](https://sinceerly.com/). Completely free. Bring your own  API key.
 
 ---
 
